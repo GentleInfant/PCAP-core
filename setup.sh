@@ -11,8 +11,8 @@ SOURCE_HTSLIB="https://github.com/samtools/htslib/releases/download/1.3.2/htslib
 SOURCE_BIOBDHTS="https://github.com/Ensembl/Bio-HTS/archive/2.3.tar.gz"
 
 # for Bio::DB::BigWig
-SOURCE_KENTSRC="ftp://ftp.sanger.ac.uk/pub/cancer/legacy-dependancies/jksrc.v334.zip"
-SOURCE_BIGFILE="http://www.cpan.org/authors/id/L/LD/LDS/Bio-BigFile-1.07.tar.gz"
+SOURCE_KENTSRC="https://ftp.sanger.ac.uk/pub/cancer/legacy-dependancies/jksrc.v334.zip"
+SOURCE_BIGFILE="https://www.cpan.org/authors/id/L/LD/LDS/Bio-BigFile-1.07.tar.gz"
 
 # for biobambam
 SOURCE_BBB_BIN_DIST="https://github.com/gt1/biobambam2/releases/download/2.0.54-release-20160802163650/biobambam2-2.0.54-release-20160802163650-x86_64-etch-linux-gnu.tar.gz"
@@ -110,7 +110,7 @@ if [ -e $SETUP_DIR/basePerlDeps.success ]; then
 else
   perlmods=( "ExtUtils::CBuilder" "Module::Build~0.42" "File::ShareDir" "File::ShareDir::Install" "Const::Fast" "File::Which" "LWP::UserAgent" "Bio::Root::Version@1.006924")
   for i in "${perlmods[@]}" ; do
-    $CPANM --no-interactive --notest --mirror http://cpan.metacpan.org -l $INST_PATH $i
+    $CPANM --no-interactive --notest --mirror https://cpan.metacpan.org -l $INST_PATH $i
   done
   touch $SETUP_DIR/basePerlDeps.success
 fi
@@ -297,12 +297,12 @@ if [ -e $SETUP_DIR/PCAP_perlPrereq.success ]; then
   echo "PCAP_perlPrereq previously installed ...";
 else
   echo
-  $CPANM --no-interactive --notest --mirror http://cpan.metacpan.org --notest -l $INST_PATH --installdeps .
+  $CPANM --no-interactive --notest --mirror https://cpan.metacpan.org --notest -l $INST_PATH --installdeps .
   touch $SETUP_DIR/PCAP_perlPrereq.success
 fi
 
 echo -n "Installing PCAP ..."
-$CPANM -v --no-interactive --mirror http://cpan.metacpan.org -l $INST_PATH .
+$CPANM -v --no-interactive --mirror https://cpan.metacpan.org -l $INST_PATH .
 echo
 
 # cleanup all junk
